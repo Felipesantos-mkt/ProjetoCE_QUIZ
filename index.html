@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Aprenda a criar peças em aramado inéditas, extremamente rentáveis e fáceis de fazer. Curso Coleção Eternizar com @lacosecaprichoss. Lote Zero com 60 vagas.">
+<title>Coleção Eternizar — @lacosecaprichoss</title>
+<style>
+@font-face{font-family:'Cor';src:url('cg300.woff2') format('woff2');font-weight:300}
+@font-face{font-family:'Cor';src:url('cg400.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Cor';src:url('cg500.woff2') format('woff2');font-weight:500}
+@font-face{font-family:'Cor';src:url('cg600.woff2') format('woff2');font-weight:600}
+@font-face{font-family:'M';src:url('mont300.woff2') format('woff2');font-weight:300}
+@font-face{font-family:'M';src:url('mont400.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'M';src:url('mont500.woff2') format('woff2');font-weight:500}
+@font-face{font-family:'M';src:url('mont600.woff2') format('woff2');font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--off:#F7F4EF;--cream:#fbf7f0;--beige:#E7D7C6;--rose:#D9A89B;--roseD:#c08778;--roseL:#e6bcb0;
+--olive:#6B6A48;--oliveD:#4e4d36;--terra:#A98772;--champ:#bda283;--ink:#6f6a55;
+--dark:#3d3a2e;--offD:#f1ece3;--white:#fff}
+html{scroll-behavior:smooth}
+body{font-family:'M',system-ui,sans-serif;color:var(--dark);background:var(--off);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.serif{font-family:'Cor',Georgia,serif}
+
+/* ===== TICKER ===== */
+.ticker{background:var(--olive);overflow:hidden;white-space:nowrap;padding:10px 0}
+.ticker-inner{display:inline-block;animation:scroll 22s linear infinite}
+.ticker-inner span{font-weight:500;font-size:13px;letter-spacing:.18em;color:var(--offD);text-transform:uppercase;margin:0 28px}
+.ticker-inner .star{color:var(--rose)}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ===== HEADER ===== */
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:var(--cream);border-bottom:1px solid rgba(189,162,131,.3)}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-mark{font-family:'Cor';font-weight:500;font-size:28px;color:var(--oliveD);letter-spacing:.02em}
+.logo-sub{font-weight:400;font-size:12px;letter-spacing:.08em;color:var(--terra)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'M';font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:14px 30px;border-radius:4px;cursor:pointer;transition:all .25s;border:none}
+.btn-cta{background:var(--olive);color:var(--off)}
+.btn-cta:hover{background:var(--oliveD)}
+.btn-ghost{background:transparent;border:1.5px solid var(--olive);color:var(--olive)}
+.btn-ghost:hover{background:var(--olive);color:var(--off)}
+
+/* ===== HERO ===== */
+.hero{position:relative;background:linear-gradient(168deg,var(--cream) 0%,var(--off) 55%,var(--offD) 100%);padding:80px 40px 70px;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 50% 20%,rgba(231,215,198,.25) 0%,transparent 70%)}
+.hero-inner{position:relative;max-width:720px;margin:0 auto}
+.stars{display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:18px}
+.stars span{font-size:18px;color:var(--terra);letter-spacing:2px}
+.stars em{font-style:normal;font-weight:400;font-size:14px;color:var(--ink);letter-spacing:.04em;white-space:nowrap}
+.hero h1{font-family:'Cor';font-weight:500;font-size:52px;color:var(--oliveD);line-height:1.06;margin-bottom:18px}
+.hero h1 em{font-style:italic;color:var(--roseD)}
+.hero-sub{font-weight:300;font-size:19px;color:var(--ink);max-width:600px;margin:0 auto 34px;line-height:1.55}
+.hero-sub strong{font-weight:600;color:var(--roseD)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;font-weight:500;font-size:13px;letter-spacing:.06em;color:var(--ink);margin-top:18px}
+.hero-carousel{width:100%;max-width:700px;margin:44px auto 0;overflow:hidden;border-radius:14px;
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.hc-track{display:flex;gap:16px;animation:hslide 25s linear infinite;width:max-content}
+.hc-track img{width:240px;height:240px;object-fit:cover;border-radius:12px;flex-shrink:0;
+  border:1px solid rgba(189,162,131,.35);box-shadow:0 8px 24px rgba(78,77,54,.10)}
+@keyframes hslide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ===== MARQUEE ===== */
+.marquee{background:var(--offD);border-top:1px solid rgba(189,162,131,.3);border-bottom:1px solid rgba(189,162,131,.3);overflow:hidden;white-space:nowrap;padding:14px 0}
+.marquee-inner{display:inline-block;animation:scroll 30s linear infinite}
+.marquee-inner span{font-family:'Cor';font-weight:500;font-size:17px;letter-spacing:.06em;color:var(--oliveD);margin:0 24px}
+.marquee-inner .dot{color:var(--rose);font-size:10px;vertical-align:middle}
+
+/* ===== SECTIONS ===== */
+.section{padding:70px 40px;max-width:1000px;margin:0 auto}
+.section-bg{background:var(--cream)}
+.section-dark{background:var(--olive);color:var(--offD)}
+.section-rose{background:linear-gradient(var(--offD),var(--off))}
+.stag{font-weight:500;font-size:13px;letter-spacing:.3em;color:var(--terra);text-transform:uppercase;text-align:center;margin-bottom:10px}
+.sh{font-family:'Cor';font-weight:500;font-size:40px;color:var(--oliveD);line-height:1.08;text-align:center;margin-bottom:14px}
+.sh em{font-style:italic;color:var(--roseD)}
+.ssub{font-weight:300;font-size:17px;color:var(--ink);text-align:center;max-width:580px;margin:0 auto 44px;line-height:1.55}
+
+/* ===== GALLERY ===== */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.gcard{position:relative;border-radius:10px;overflow:hidden;background:var(--white);border:1px solid rgba(189,162,131,.35);transition:transform .3s}
+.gcard:hover{transform:translateY(-4px)}
+.gcard img{width:100%;aspect-ratio:1;object-fit:cover}
+.obj-clara{object-position:50% 15% !important;}
+.gcard .gname{padding:14px 16px;text-align:center}
+.gcard .gname h3{font-family:'Cor';font-weight:500;font-size:22px;color:var(--oliveD)}
+.gcard.empty{display:flex;align-items:center;justify-content:center;min-height:300px;border:2px dashed var(--champ)}
+.gcard.empty span{font-weight:400;font-size:15px;color:var(--champ);letter-spacing:.04em}
+
+/* ===== FOR WHO ===== */
+.for-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
+.for-card{background:var(--white);border:1px solid rgba(189,162,131,.3);border-radius:10px;padding:28px 26px}
+.for-card h3{font-family:'Cor';font-weight:500;font-size:22px;color:var(--oliveD);margin-bottom:8px}
+.for-card p{font-weight:300;font-size:15px;color:var(--ink);line-height:1.5}
+
+/* ===== MODULES ===== */
+.mod-list{display:flex;flex-direction:column;gap:14px;margin-top:36px}
+.mod-item{display:flex;align-items:flex-start;gap:18px;background:var(--white);border:1px solid rgba(189,162,131,.3);
+  border-left:4px solid var(--olive);border-radius:0 10px 10px 0;padding:24px 26px;
+  box-shadow:0 4px 16px rgba(78,77,54,.06);transition:transform .2s}
+.mod-item:hover{transform:translateX(4px)}
+.mod-icon{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:var(--olive);display:flex;align-items:center;justify-content:center}
+.mod-icon svg{width:20px;height:20px}
+.mod-item h3{font-family:'Cor';font-weight:500;font-size:20px;color:var(--oliveD);margin-bottom:4px}
+.mod-item p{font-weight:300;font-size:14px;color:var(--ink)}
+
+/* ===== TESTIMONIALS ===== */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.test-card{background:var(--white);border:1px solid rgba(189,162,131,.3);border-radius:10px;overflow:hidden}
+.vid-thumb{position:relative;overflow:hidden;border-radius:10px 10px 0 0}
+.vid-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s}
+.test-card:hover .vid-thumb img{transform:scale(1.04)}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;
+  background:rgba(107,106,72,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:var(--off);transition:background .25s;padding-left:4px}
+.test-card:hover .play-btn{background:var(--olive)}
+.test-card .tc-body{padding:16px 18px}
+.test-card .tc-label{font-weight:500;font-size:13px;color:var(--terra);letter-spacing:.06em}
+
+/* ===== OFFER ===== */
+.offer-wrap{max-width:540px;margin:0 auto;text-align:center}
+.offer-box{background:var(--white);border:2px solid var(--olive);border-radius:14px;padding:44px 36px;margin-bottom:22px;position:relative;
+  box-shadow:0 8px 40px rgba(107,106,72,.12);animation:offerPulse 2.5s ease-in-out infinite}
+@keyframes offerPulse{0%,100%{box-shadow:0 8px 40px rgba(107,106,72,.12);transform:scale(1)}50%{box-shadow:0 12px 50px rgba(107,106,72,.22),0 0 0 4px rgba(217,168,155,.18);transform:scale(1.008)}}
+.offer-box.disabled{opacity:.45;pointer-events:none;border-color:var(--champ);filter:grayscale(.4)}
+.lote-tag{display:inline-block;font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--white);background:var(--olive);padding:8px 20px;border-radius:3px;margin-bottom:20px}
+.offer-box.disabled .lote-tag{background:var(--champ)}
+.offer-name{font-family:'Cor';font-weight:500;font-size:28px;color:var(--oliveD);margin-bottom:4px}
+.offer-desc{font-weight:300;font-size:14px;color:var(--ink);margin-bottom:22px}
+.price-old{font-weight:400;font-size:18px;color:var(--ink);text-decoration:line-through;margin-bottom:4px}
+.price-new{font-family:'Cor';font-weight:600;font-size:52px;color:var(--olive);line-height:1;
+  text-shadow:0 2px 12px rgba(107,106,72,.15)}
+.price-new small{font-size:24px;font-weight:400;color:var(--terra)}
+.price-installment{font-weight:300;font-size:15px;color:var(--ink);margin-top:8px}
+.price-pix{font-weight:500;font-size:16px;color:var(--roseD);margin-top:2px}
+.offer-cta{margin-top:26px}
+.offer-cta .btn{font-size:16px;padding:18px 40px;width:100%}
+.offer-spots{font-weight:500;font-size:13px;color:var(--roseD);margin-top:14px;letter-spacing:.04em}
+.progress-wrap{margin-top:18px}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--ink);margin-bottom:6px}
+.progress-label strong{color:var(--roseD)}
+.progress-bar{width:100%;height:8px;background:var(--offD);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--olive),var(--roseD));
+  animation:fillPulse 2s ease-in-out infinite}
+@keyframes fillPulse{0%,100%{opacity:1}50%{opacity:.75}}
+.guarantee-visual{text-align:center;margin-top:30px;padding:30px 20px}
+.g-badge{margin:0 auto 18px}
+.g-title{font-weight:600;font-size:18px;color:var(--oliveD);margin-bottom:8px}
+.g-copy{font-weight:300;font-size:15px;color:var(--ink);max-width:420px;margin:0 auto;line-height:1.55}
+.seals{display:flex;justify-content:center;gap:28px;margin-top:20px;font-weight:400;font-size:13px;color:var(--ink);letter-spacing:.04em}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:680px;margin:36px auto 0;display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid rgba(189,162,131,.3)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-weight:500;font-size:16px;color:var(--oliveD)}
+.faq-q::after{content:"+";font-family:'Cor';font-size:26px;color:var(--terra);transition:transform .25s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{font-weight:300;font-size:15px;color:var(--ink);padding:0 0 20px;line-height:1.55}
+
+/* ===== BIO ===== */
+.bio{display:flex;gap:40px;align-items:flex-start;margin-top:36px}
+.bio-img{flex-shrink:0;width:300px;border-radius:12px;overflow:hidden;border:1px solid rgba(189,162,131,.3)}
+.bio-img img{width:100%;object-fit:cover}
+.bio-text h3{font-family:'Cor';font-weight:500;font-size:30px;color:var(--oliveD);margin-bottom:6px}
+.bio-text .handle{font-weight:500;font-size:14px;color:var(--roseD);margin-bottom:16px}
+.bio-text p{font-weight:300;font-size:15px;color:var(--ink);line-height:1.6;margin-bottom:12px}
+
+/* ===== FOOTER ===== */
+.footer{text-align:center;padding:36px 40px;background:var(--olive);color:rgba(244,239,230,.7);font-size:13px;letter-spacing:.04em}
+.footer .flogo{font-family:'Cor';font-weight:500;font-size:24px;color:var(--offD);margin-bottom:6px}
+.footer a{color:var(--roseL)}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .header{display:none}
+  .hero{padding:50px 20px 40px}
+  .hero h1{font-size:32px}
+  .hero-sub{font-size:15px}
+  .hero-carousel{margin-top:30px}
+  .hc-track img{width:180px;height:180px}
+  .section{padding:44px 20px}
+  .sh{font-size:28px}
+  .ssub{font-size:15px}
+  .stag{font-size:12px}
+  .gallery{grid-template-columns:repeat(2,1fr);gap:10px}
+  .gcard .gname h3{font-size:18px}
+  .for-grid{grid-template-columns:1fr;gap:12px}
+  .test-grid{grid-template-columns:1fr;gap:14px}
+  .play-btn{width:50px;height:50px;font-size:18px}
+  .bio{flex-direction:column;gap:24px}
+  .bio-img{width:100%;max-width:100%}
+  .offer-wrap{max-width:100%}
+  .offer-box{padding:30px 22px}
+  .price-new{font-size:40px}
+  .price-old{font-size:16px}
+  .seals{flex-direction:column;gap:10px;align-items:center}
+  .marquee-inner span{font-size:14px;margin:0 16px}
+  .mod-item{flex-direction:column;gap:12px}
+  .footer{padding:28px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-inner">
+<span><b class="star">✦</b> Lote zero · apenas 60 vagas</span>
+<span><b class="star">✦</b> Lote zero · apenas 60 vagas</span>
+<span><b class="star">✦</b> Lote zero · apenas 60 vagas</span>
+<span><b class="star">✦</b> Lote zero · apenas 60 vagas</span>
+<span><b class="star">✦</b> Lote zero · apenas 60 vagas</span>
+<span><b class="star">✦</b> Lote zero · apenas 60 vagas</span>
+<span><b class="star">✦</b> Lote zero · apenas 60 vagas</span>
+<span><b class="star">✦</b> Lote zero · apenas 60 vagas</span>
+</div></div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">
+    <span class="logo-mark serif">Coleção Eternizar</span>
+    <span class="logo-sub">por @lacosecaprichoss</span>
+  </div>
+  <a href="#oferta" class="btn btn-cta">Garantir minha vaga</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="stars">
+      <span>★ ★ ★ ★ ★</span>
+      <em>+3.000 alunas transformadas</em>
+    </div>
+    <h1 class="serif">Aprenda peças em aramado <em>inéditas</em>, extremamente rentáveis e fáceis de fazer</h1>
+    <p class="hero-sub">Tiaras, grinaldas e acessórios que <strong>ninguém na sua região faz</strong> — com passo a passo completo pra você criar, precificar e vender com lucro de verdade. Mesmo que nunca tenha tocado num fio de cobre.</p>
+    <a href="#oferta" class="btn btn-cta">Quero entrar no lote zero · 60 vagas</a>
+    <p class="hero-badge">Acesso imediato após a compra · Garantia de 7 dias</p>
+  </div>
+  <div class="hero-carousel">
+    <div class="hc-track">
+      <img src="img/tiara-florescer.png" alt="Tiara Florescer">
+      <img src="img/grinalda-bride.png" alt="Grinalda Bride">
+      <img src="img/porta-coque-floral.png" alt="Porta Coque Floral">
+      <img src="img/presilha-isa.png" alt="Presilha Isa">
+      <img src="img/tiara-clara.png" alt="Tiara Clara" class="obj-clara">
+      <img src="img/laco-maya.png" alt="Laço Maya">
+      <img src="img/tiara-florescer.png" alt="Tiara Florescer">
+      <img src="img/grinalda-bride.png" alt="Grinalda Bride">
+      <img src="img/porta-coque-floral.png" alt="Porta Coque Floral">
+      <img src="img/presilha-isa.png" alt="Presilha Isa">
+      <img src="img/tiara-clara.png" alt="Tiara Clara" class="obj-clara">
+      <img src="img/laco-maya.png" alt="Laço Maya">
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee"><div class="marquee-inner">
+<span>Peças inéditas</span><span class="dot">●</span>
+<span>Extremamente rentáveis</span><span class="dot">●</span>
+<span>Fáceis de fazer</span><span class="dot">●</span>
+<span>6 aulas em vídeo</span><span class="dot">●</span>
+<span>Bônus de precificação</span><span class="dot">●</span>
+<span>Lista de fornecedores</span><span class="dot">●</span>
+<span>Peças inéditas</span><span class="dot">●</span>
+<span>Extremamente rentáveis</span><span class="dot">●</span>
+<span>Fáceis de fazer</span><span class="dot">●</span>
+<span>6 aulas em vídeo</span><span class="dot">●</span>
+<span>Bônus de precificação</span><span class="dot">●</span>
+<span>Lista de fornecedores</span><span class="dot">●</span>
+</div></div>
+
+<!-- GALLERY -->
+<section class="section section-bg">
+  <p class="stag">O que você vai aprender a criar</p>
+  <h2 class="sh serif">Peças que <em>encantam</em> e vendem rápido</h2>
+  <p class="ssub">Cada peça foi pensada pra ter alto valor percebido, custo acessível e técnica que você domina em poucas horas.</p>
+  <div class="gallery">
+    <div class="gcard">
+      <img src="img/tiara-florescer.png" alt="Tiara Florescer" loading="lazy">
+      <div class="gname"><h3 class="serif">Tiara Florescer</h3></div>
+    </div>
+    <div class="gcard">
+      <img src="img/grinalda-bride.png" alt="Grinalda Bride" loading="lazy">
+      <div class="gname"><h3 class="serif">Grinalda Bride</h3></div>
+    </div>
+    <div class="gcard">
+      <img src="img/porta-coque-floral.png" alt="Porta Coque Floral" loading="lazy">
+      <div class="gname"><h3 class="serif">Porta Coque Floral</h3></div>
+    </div>
+    <div class="gcard">
+      <img src="img/presilha-isa.png" alt="Presilha Isa" loading="lazy">
+      <div class="gname"><h3 class="serif">Presilha Isa</h3></div>
+    </div>
+    <div class="gcard">
+      <img src="img/tiara-clara.png" alt="Tiara Clara" loading="lazy" class="obj-clara">
+      <div class="gname"><h3 class="serif">Tiara Clara</h3></div>
+    </div>
+    <div class="gcard">
+      <img src="img/laco-maya.png" alt="Laço Maya" loading="lazy">
+      <div class="gname"><h3 class="serif">Laço Maya</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRA QUEM É -->
+<section class="section">
+  <p class="stag">Pra quem é</p>
+  <h2 class="sh serif">Isso aqui é pra você que…</h2>
+  <div class="for-grid">
+    <div class="for-card">
+      <h3 class="serif">Quer começar no artesanato</h3>
+      <p>Nunca fez uma peça em aramado, mas sonha em criar algo lindo e rentável com as próprias mãos. O passo a passo parte do zero.</p>
+    </div>
+    <div class="for-card">
+      <h3 class="serif">Já faz artesanato e quer inovar</h3>
+      <p>Sente que precisa de peças novas, diferentes, que ninguém na sua região oferece — pra atrair cliente novo e sair do "mais do mesmo".</p>
+    </div>
+    <div class="for-card">
+      <h3 class="serif">Quer faturar de verdade</h3>
+      <p>Está cansada de vender barato e não ver lucro. Quer aprender a precificar certo e criar peças com alto valor percebido.</p>
+    </div>
+    <div class="for-card">
+      <h3 class="serif">Quer se destacar na região</h3>
+      <p>Quer virar referência em peças sofisticadas e exclusivas, sem concorrência, com clientes que pagam o que a sua arte vale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VOCÊ RECEBE -->
+<section class="section section-bg">
+  <p class="stag">O que vem no curso</p>
+  <h2 class="sh serif">Tudo que você precisa pra <em>criar e vender</em></h2>
+  <p class="ssub">Cada módulo resolve um pedaço do seu negócio — da técnica à precificação.</p>
+  <div class="mod-list">
+    <div class="mod-item">
+      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="2" stroke-linecap="round"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></div>
+      <div><h3 class="serif">6 aulas em vídeo · passo a passo</h3><p>Cada peça ensinada do zero, com técnicas inéditas que você não encontra em outro lugar.</p></div>
+    </div>
+    <div class="mod-item">
+      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <div><h3 class="serif">Aula de precificação + planilha</h3><p>Pare de adivinhar preço. Aprenda a cobrar certo e veja lucro de verdade no fim do mês.</p></div>
+    </div>
+    <div class="mod-item">
+      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <div><h3 class="serif">Colorimetria</h3><p>Combinações de cores que elevam suas peças e encantam a cliente antes mesmo de provar.</p></div>
+    </div>
+    <div class="mod-item">
+      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></div>
+      <div><h3 class="serif">Lista de fornecedores</h3><p>Onde comprar cada material com o melhor custo-benefício, sem perder tempo pesquisando.</p></div>
+    </div>
+    <div class="mod-item">
+      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div><h3 class="serif">Pack do Canva para artesanato</h3><p>Templates prontos pra você criar posts, stories e catálogos profissionais sem precisar de designer.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="section">
+  <p class="stag">Prova social</p>
+  <h2 class="sh serif">Quem aprendeu, <em>aprovou</em></h2>
+  <p class="ssub">Veja com seus próprios olhos o que as alunas estão dizendo.</p>
+  <div class="test-grid">
+    <a class="test-card" href="https://youtu.be/Q46p-HDOnKs" target="_blank">
+      <div class="vid-thumb"><img src="https://img.youtube.com/vi/Q46p-HDOnKs/hqdefault.jpg" alt="Depoimento 1"><span class="play-btn">▶</span></div>
+      <div class="tc-body"><span class="tc-label">Depoimento de aluna · toque pra assistir</span></div>
+    </a>
+    <a class="test-card" href="https://youtu.be/QtIY_sNvmQw" target="_blank">
+      <div class="vid-thumb"><img src="https://img.youtube.com/vi/QtIY_sNvmQw/hqdefault.jpg" alt="Depoimento 2"><span class="play-btn">▶</span></div>
+      <div class="tc-body"><span class="tc-label">Depoimento de aluna · toque pra assistir</span></div>
+    </a>
+    <a class="test-card" href="https://youtu.be/rZPNS4tdseE" target="_blank">
+      <div class="vid-thumb"><img src="https://img.youtube.com/vi/rZPNS4tdseE/hqdefault.jpg" alt="Depoimento 3"><span class="play-btn">▶</span></div>
+      <div class="tc-body"><span class="tc-label">Depoimento de aluna · toque pra assistir</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="section section-rose" id="oferta">
+  <p class="stag">Vagas limitadas</p>
+  <h2 class="sh serif">Essa condição <em>não vai durar</em></h2>
+  <p class="ssub">O Lote Zero é o menor preço que esse curso vai ter. São apenas 60 vagas — quando acabar, o valor sobe pra R$197. Não espere.</p>
+  <div class="offer-wrap">
+
+    <!-- LOTE ZERO -->
+    <div class="offer-box">
+      <span class="lote-tag">Lote Zero · 60 vagas</span>
+      <h3 class="offer-name serif">Coleção Eternizar</h3>
+      <p class="offer-desc">6 aulas + precificação + planilha + colorimetria + fornecedores + pack Canva</p>
+      <p class="price-old">de R$ 197,00</p>
+      <p class="price-new serif">R$ 97<small>,00</small></p>
+      <p class="price-installment">ou 12x de <strong>R$ 10,09</strong></p>
+      <p class="price-pix">à vista no PIX com desconto</p>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Vagas sendo preenchidas</span><strong>73%</strong></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:73%"></div></div>
+      </div>
+      <div class="offer-cta">
+        <a href="https://pay.kiwify.com.br/us8bpKq" target="_blank" class="btn btn-cta">Quero garantir minha vaga</a>
+      </div>
+      <p class="offer-spots">Restam poucas vagas · acesso imediato</p>
+    </div>
+
+    <!-- LOTE 1 (disabled) -->
+    <div class="offer-box disabled">
+      <span class="lote-tag">Lote 01 · em breve</span>
+      <h3 class="offer-name serif">Coleção Eternizar</h3>
+      <p class="offer-desc">6 aulas + precificação + planilha + colorimetria + fornecedores + pack Canva</p>
+      <p class="price-new serif" style="color:var(--champ)">R$ 197<small>,00</small></p>
+      <p class="price-installment">ou 12x de <strong>R$ 16,42</strong></p>
+    </div>
+
+    <!-- GARANTIA -->
+    <div class="guarantee-visual">
+      <div class="g-badge">
+        <svg viewBox="0 0 120 120" width="120" height="120" fill="none">
+          <circle cx="60" cy="60" r="56" stroke="#6B6A48" stroke-width="2.5"/>
+          <circle cx="60" cy="60" r="48" stroke="#D9A89B" stroke-width="1" stroke-dasharray="4 3"/>
+          <text x="60" y="46" text-anchor="middle" font-family="'Cor',Georgia,serif" font-size="38" font-weight="600" fill="#6B6A48">7</text>
+          <text x="60" y="66" text-anchor="middle" font-family="'M',sans-serif" font-size="11" font-weight="600" letter-spacing=".12em" fill="#A98772" text-transform="uppercase">DIAS DE</text>
+          <text x="60" y="82" text-anchor="middle" font-family="'M',sans-serif" font-size="11" font-weight="600" letter-spacing=".12em" fill="#A98772" text-transform="uppercase">GARANTIA</text>
+        </svg>
+      </div>
+      <p class="g-title"><strong>Risco zero pra você.</strong></p>
+      <p class="g-copy">Se em até 7 dias você sentir que o curso não é pra você, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. O risco é todo nosso.</p>
+    </div>
+    <div class="seals">
+      <span>🔒 Compra segura</span>
+      <span>💳 Cartão · PIX</span>
+      <span>⚡ Acesso imediato</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <p class="stag">Dúvidas</p>
+  <h2 class="sh serif">Antes de entrar, deixa eu te <em>tranquilizar</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Nunca fiz artesanato. Funciona pra iniciante?</div>
+      <div class="faq-a"><p>Funciona, sim. As aulas partem do zero, com passo a passo detalhado. Muitas alunas começaram sem nunca ter tocado num fio e hoje criam e vendem. Você é levada pela mão.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Já faço artesanato. Vale a pena pra mim?</div>
+      <div class="faq-a"><p>Demais. As peças são inéditas — diferentes de tudo que você encontra por aí. É a novidade que renova o seu catálogo, atrai cliente novo e te destaca na região.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Os materiais são caros ou difíceis de encontrar?</div>
+      <div class="faq-a"><p>Não. Você recebe uma lista de fornecedores com o melhor custo-benefício. Os materiais são acessíveis e fáceis de achar, e o valor percebido das peças prontas é muito superior ao custo.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Por quanto tempo tenho acesso?</div>
+      <div class="faq-a"><p>O acesso é imediato e vitalício. Você assiste e reassiste quantas vezes precisar, no seu tempo.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">E se eu não gostar?</div>
+      <div class="faq-a"><p>Você tem 7 dias de garantia. Se sentir que não é pra você, pede o reembolso direto pela plataforma, sem burocracia.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="section section-bg">
+  <p class="stag">Conheça sua mentora</p>
+  <h2 class="sh serif">A artesã por trás da <em>Coleção Eternizar</em></h2>
+  <div class="bio">
+    <div class="bio-img">
+      <img src="img/especialista.png" alt="Especialista @lacosecaprichoss" loading="lazy">
+    </div>
+    <div class="bio-text">
+      <h3 class="serif">Danielle Salvador</h3>
+      <p class="handle">@lacosecaprichoss · Artesã há 12 anos</p>
+      <p>Tenho 34 anos, sou mãe e formada em Administração de Empresas. Já passei por diversos setores, mas foi no empreendedorismo com os laços que eu realmente me encontrei.</p>
+      <p>Entrei pro artesanato depois da minha primeira gestação — e largar a rotina de CLT não foi uma decisão fácil. Mas foi a melhor coisa que eu fiz. De lá pra cá, foram muitos aprendizados, muito crescimento e muitos laços feitos à mão para clientes em todo o Brasil.</p>
+      <p>Hoje já são mais de <strong>3.000 alunas</strong> alcançadas pelo meu trabalho — mulheres que se encantaram com os laços que eu faço e que hoje também criam com esse mesmo olhar delicado e atemporal. Agora é a sua vez.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section" style="text-align:center;padding-bottom:80px">
+  <h2 class="sh serif" style="margin-bottom:26px">Sua arte merece ser <em>valorizada</em></h2>
+  <a href="https://pay.kiwify.com.br/us8bpKq" target="_blank" class="btn btn-cta" style="font-size:16px;padding:18px 48px">Quero garantir minha vaga no lote zero</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="flogo serif">Coleção Eternizar</p>
+  <p>por <a href="https://instagram.com/lacosecaprichoss" target="_blank">@lacosecaprichoss</a> · Todos os direitos reservados © 2026</p>
+</footer>
+
+</body>
+</html>
